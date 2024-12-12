@@ -14,7 +14,7 @@ class App extends React.Component {
     }
 
     componentDidMount() {
-        fetch('https://jsonplaceholder.typicode.com/users')
+        fetch('https://jsonplaceholder.typicode.com/users/')
             .then(response=> response.json())
             .then(users => {this.setState({ robots: users})})
     }
@@ -32,7 +32,7 @@ class App extends React.Component {
            <h1>Loading</h1> :
         (
             <div className='tc'>
-                <h1 className='f1'>RoboFriends</h1>
+                <h1 className='f1' style={{color:'rgb(242, 159, 88)', userSelect:'none'}}>RoboFriends</h1>
                 <SearchBox searchChange={this.onSearchChange}/>
                 <Scroll>
                     <CardList robots={filteredRobots}/>
